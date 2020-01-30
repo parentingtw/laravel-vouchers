@@ -11,6 +11,7 @@ class Voucher extends Model
         'model_id',
         'model_type',
         'code',
+        'discount',
         'data',
         'expires_at'
     ];
