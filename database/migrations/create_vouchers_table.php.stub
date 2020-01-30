@@ -18,7 +18,8 @@ class CreateVouchersTable extends Migration
             $table->bigIncrements('id');
             $table->string('code', 32)->unique();
             $table->morphs('model');
-            $table->text('data')->nullable();
+            $table->decimal('discount')->default(1);
+            $table->json('data')->nullable();
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();
         });
