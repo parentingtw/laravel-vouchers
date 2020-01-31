@@ -20,6 +20,7 @@ class CreateVouchersTable extends Migration
             $table->morphs('model');
             $table->decimal('discount')->default(1);
             $table->json('data')->nullable();
+            $table->timestamp('inspires_at')->nullable();
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();
         });

@@ -13,6 +13,7 @@ class Voucher extends Model
         'code',
         'discount',
         'data',
+        'inspires_at',
         'expires_at'
     ];
 
@@ -22,6 +23,7 @@ class Voucher extends Model
      * @var array
      */
     protected $dates = [
+        'inspires_at',
         'expires_at'
     ];
 
@@ -62,5 +64,15 @@ class Voucher extends Model
     public function isExpired()
     {
         return $this->expires_at ? Carbon::now()->gte($this->expires_at) : false;
+    }
+
+        /**
+     * Check if code is inspire.
+     *
+     * @return bool
+     */
+    public function isInspire()
+    {
+        return $this->inspires_at ? Carbon::now()->lte($this->inspires_at) : false;
     }
 }
